@@ -23,7 +23,7 @@ watch(todos, (newVal) => {
 })
 
 const addTodo = () => {
-  if (input_content.value.trim() === '' || input_content_title.value.trim() === '' ||input_content_title.value.trim() === '' ) {
+  if (input_content.value.trim() === '' || input_content_title.value.trim() === '' ||input_content_img.value.trim() === '' ) {
     return
   }
 
@@ -82,7 +82,7 @@ onMounted(() => {
       </form>
       <br>
       <br>
-      <h1 >Список заметок</h1>
+      <h1>Список заметок</h1>
     </section>
 
 
