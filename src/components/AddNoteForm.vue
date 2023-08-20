@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
-
+import NoteList from './NoteList.vue'
 const todos = ref([])
 const name = ref('')
 
@@ -49,7 +49,6 @@ onMounted(() => {
 
 <template>
   <main class="app">
-
     <section class="greeting">
       <h2 class="title">
         Заметки
@@ -79,39 +78,22 @@ onMounted(() => {
             id="content_img"
             placeholder="Вставте URL картинки"
             v-model="input_content_img" />
-
-
         <input type="submit" value="Добавить заметку" />
       </form>
+      <br>
+      <br>
+      <h1 >Список заметок</h1>
     </section>
 
-    <section class="todo-list">
-      <h3>Список заметок</h3>
-      <div class="list" id="todo-list">
 
-        <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
-          <label>
-            <input type="checkbox" v-model="todo.done" />
-          </label>
-
-          <div class="todo-content">
-            <input type="text" v-model="todo.content" />
-          </div>
-          <div class="todo-content_title">
-            <input type="text" v-model="todo.content_title" />
-          </div>
-          <div class="todo-content_title">
-            <img :src="todo.content_img"/>
-          </div>
-
-          <div class="actions">
-            <button class="delete" @click="removeTodo(todo)">Удалить</button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+    <NoteList
+        v-for="todo in todos_asc"
+        :content_="todo.content"
+        :content_title_="todo.content_title"
+        :content_img_="todo.content_img"
+        :removeTodo_ ="removeTodo"
+        :todo_ ="todo"
+    ></NoteList>
   </main>
 </template>>
 <style>
