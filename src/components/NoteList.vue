@@ -10,7 +10,7 @@ defineProps(['content_','content_title_','content_img_','removeTodo_','todo_'])
         <div class="todo-content">
           <input :value="content_" type="text"/>
         </div>
-        <div class="todo-content_title">
+        <div class="todo-content">
           <input :value="content_title_" type="text"  />
         </div>
         <div class="todo-content_img">

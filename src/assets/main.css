@@ -229,3 +229,8 @@ input:checked ~ .bubble::after {
   text-decoration: line-through;
   color: var(--grey);
 }
+img {
+  width: 50px;
+  margin: 0 50px 0 0;
+
+}
